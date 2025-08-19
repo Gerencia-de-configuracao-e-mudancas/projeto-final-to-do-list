@@ -7,7 +7,7 @@
     <title>Sobre - To-Do List</title>
 
     <!--Css do projeto-->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <!--Font-Awesome (Ícones) do projeto-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
@@ -17,6 +17,94 @@
     <!-- Fonte de Texto do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+    <style>
+        .sobre-section {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sobre-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .sobre-section h2 {
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .sobre-section h2 i {
+            margin-right: 0.5rem;
+            color: #ffffff;
+        }
+
+        .sobre-section p {
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .desenvolvedores {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .desenvolvedor {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 6px;
+            border-left: 3px solid #ffffff;
+        }
+
+        .desenvolvedor h4 {
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .desenvolvedor span {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .back-button {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.8rem;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 6px;
+        }
+
+        .back-button:hover {
+            text-decoration: none;
+        }
+
+        .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+    </style>
 </head>
 
 <body>
