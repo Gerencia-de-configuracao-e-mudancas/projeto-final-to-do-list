@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - To-Do List</title>
+
+    <!--Css do projeto-->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!--Font-Awesome (Ícones) do projeto-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fonte de Texto do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        .sobre-section {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sobre-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .sobre-section h2 {
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .sobre-section h2 i {
+            margin-right: 0.5rem;
+            color: #ffffff;
+        }
+
+        .sobre-section p {
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .desenvolvedores {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .desenvolvedor {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 6px;
+            border-left: 3px solid #ffffff;
+        }
+
+        .desenvolvedor h4 {
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .desenvolvedor span {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .back-button {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.8rem;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 6px;
+        }
+
+        .back-button:hover {
+            text-decoration: none;
+        }
+
+        .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu-container">
+        <ul>
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="sobre.html" class="active">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="todo-container">
+        <header>
+            <h1>Sobre o Projeto</h1>
+        </header>
+
+        <div class="sobre-section">
+            <h2><i class="fa-solid fa-lightbulb"></i>Sobre o Projeto</h2>
+            <p>Este é um projeto desenvolvido para a disciplina de Gerência e Configuração de Mudanças do curso de Análise e Desenvolvimento de Sistemas.</p>
+            <p>O objetivo foi criar um sistema simples de gerenciamento de tarefas (To-Do List) que permite aos usuários adicionar, editar, marcar como concluído e remover tarefas de forma intuitiva.</p>
+        </div>
+
+        <div class="sobre-section">
+            <h2><i class="fa-solid fa-users"></i>Equipe de Desenvolvimento</h2>
+            <div class="desenvolvedores">
+                <div class="desenvolvedor">
+                    <h4>Francisco André</h4>
+                    <span>Responsável pelo front-end e design</span>
+                </div>
+                <div class="desenvolvedor">
+                    <h4>Francisco Bernardo</h4>
+                    <span>Responsável pela lógica JavaScript</span>
+                </div>
+                <div class="desenvolvedor">
+                    <h4>José Gustavo</h4>
+                    <span>Responsável pela estrutura e testes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sobre-section">
+            <h2><i class="fa-solid fa-code"></i>Tecnologias Utilizadas</h2>
+            <p>O projeto foi desenvolvido utilizando tecnologias como:</p>
+            <div class="tecnologias">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">GitHub</span>
+            </div>
+        </div>
+
+        <div class="sobre-section">
+            <h2><i class="fa-solid fa-target"></i>Objetivos do Projeto</h2>
+            <p>Desenvolver um sistema funcional de gerenciamento de tarefas que demonstre conhecimentos em:</p>
+            <p>• Manipulação do DOM com JavaScript<br>
+               • Design moderno<br>
+               • Estruturação de código limpo e organizado<br>
+               • Aplicação de conceitos de versionamento</p>
+        </div>
+
+        <a href="../index.html" class="back-button button">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar para o To-Do List
+        </a>
+    </div>
+
+</body>
+</html>
