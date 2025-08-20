@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial - To-Do List</title>
+
+    <!--Css do projeto-->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!--Font-Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+
+    <!-- Fonte -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .tutorial-section.todo {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .tutorial-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .tutorial-body p {
+      margin: 0;
+      flex: 1;
+    }
+
+    .tutorial-body button {
+      margin-left: 1rem;
+    }
+
+    .back-button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.8rem;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 6px;
+    }
+  </style>
+
+  <body>
+    <nav class="menu-container">
+      <ul>
+        <li><a href="../../index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="tutorial.html" class="active">Tutorial</a></li>
+      </ul>
+    </nav>
+
+    <div class="todo-container">
+      <header>
+        <h1>Tutorial da To-Do List</h1>
+      </header>
+
+      <div class="tutorial-section todo">
+        <h3>1. Adicionar Tarefas</h3>
+        <div class="tutorial-body">
+          <p>Digite sua tarefa no campo e clique no botão:</p>
+          <button disabled><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="tutorial-section todo">
+        <h3>2. Editar Tarefas</h3>
+        <div class="tutorial-body">
+          <p>Clique no botão de editar e depois confirme a alteração:</p>
+          <div style="display: flex; gap: 0.5rem">
+            <button disabled><i class="fa-solid fa-pen"></i></button>
+            <button disabled><i class="fa-solid fa-check-double"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-section todo">
+        <h3>3. Concluir Tarefas</h3>
+        <div class="tutorial-body">
+          <p>Ao finalizar, marque como concluída:</p>
+          <button disabled><i class="fa-solid fa-check"></i></button>
+        </div>
+      </div>
+
+      <div class="tutorial-section todo">
+        <h3>4. Remover Tarefas</h3>
+        <div class="tutorial-body">
+          <p>Para excluir, clique no botão:</p>
+          <button disabled><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <div class="tutorial-section todo">
+        <h3>5. Pesquisar e Filtrar</h3>
+        <div
+          class="tutorial-body"
+          style="flex-direction: column; align-items: flex-start; gap: 0.5rem"
+        >
+          <p>Use o campo de busca:</p>
+          <form style="display: flex; gap: 0.3rem; max-width: 250px">
+            <input type="text" placeholder="Buscar" disabled />
+            <button disabled><i class="fa-solid fa-delete-left"></i></button>
+          </form>
+          <p>Ou filtre as tarefas:</p>
+          <select disabled>
+            <option>Todos</option>
+            <option>Feitas</option>
+            <option>A fazer</option>
+          </select>
+        </div>
+      </div>
+
+      <a
+        href="../../index.html"
+        class="back-button button"
+        style="margin-top: 1rem"
+      >
+        <i class="fa-solid fa-arrow-left"></i> Voltar
+      </a>
+    </div>
+  </body>
+</html>
