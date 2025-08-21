@@ -128,3 +128,26 @@ eraseBtn.addEventListener("click", (e) => {
   searchInput.value = "";
   searchInput.dispatchEvent(new Event("keyup"));
 });
+
+filterSelect.addEventListener("change", () => {
+  const filterValue = filterSelect.value;
+  const todos = document.querySelectorAll(".todo");
+
+  todos.forEach((todo) => {
+    switch (filterValue) {
+      case "all":
+        todo.style.display = "flex";
+        break;
+      case "done":
+        todo.classList.contains("done")
+          ? (todo.style.display = "flex")
+          : (todo.style.display = "none");
+        break;
+      case "todo":
+        !todo.classList.contains("done")
+          ? (todo.style.display = "flex")
+          : (todo.style.display = "none");
+        break;
+    }
+  });
+});
