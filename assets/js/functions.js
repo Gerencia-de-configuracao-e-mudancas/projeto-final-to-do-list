@@ -120,3 +120,11 @@ searchInput.addEventListener("keyup", () => {
     }
   });
 });
+
+const eraseBtn = document.querySelector("#erase-button");
+
+eraseBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchInput.value = "";
+  searchInput.dispatchEvent(new Event("keyup"));
+});
