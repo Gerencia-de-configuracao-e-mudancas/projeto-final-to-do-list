@@ -55,3 +55,13 @@ const updateTodo = (text) => {
     }
   });
 };
+
+todoForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const inputValue = todoInput.value;
+
+  if (inputValue) {
+    saveTodo(inputValue);
+  }
+});
