@@ -207,16 +207,21 @@ select {
 
 .todo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Alinha texto e botões nas extremidades */
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid #ddd;
     transition: .3s;
+    gap: 0.5rem; /* Espaço entre elementos */
 }
 
 .todo h3 {
     flex: 1;
     font-size: 0.9rem;
+    word-break: break-word; /* Permite quebra de linha */
+    white-space: pre-line;  /* Permite múltiplas linhas */
+    overflow-wrap: break-word;
+    margin-right: 0.5rem; /* Espaço entre texto e botões */
 }
 
 .todo button {
