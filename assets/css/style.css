@@ -59,6 +59,7 @@ input,
 select {
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
+    color: #000000;
 }
 
 .hide {
