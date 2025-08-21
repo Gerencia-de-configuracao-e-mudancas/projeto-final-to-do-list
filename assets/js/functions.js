@@ -106,3 +106,17 @@ editForm.addEventListener("submit", (e) => {
 
   toggleForms();
 });
+
+searchInput.addEventListener("keyup", () => {
+  const search = searchInput.value.toLowerCase();
+  const todos = document.querySelectorAll(".todo");
+
+  todos.forEach((todo) => {
+    const title = todo.querySelector("h3").innerText.toLowerCase();
+    if (title.includes(search)) {
+      todo.style.display = "flex";
+    } else {
+      todo.style.display = "none";
+    }
+  });
+});
