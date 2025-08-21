@@ -37,3 +37,9 @@ const saveTodo = (text) => {
   todoInput.value = "";
   todoInput.focus();
 };
+
+const toggleForms = () => {
+  editForm.classList.toggle("hide");
+  todoForm.classList.toggle("hide");
+  todoList.classList.toggle("hide");
+};
