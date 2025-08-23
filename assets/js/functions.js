@@ -7,33 +7,51 @@ const cancelEditBtn = document.querySelector("#edit-cancel-btn");
 const searchInput = document.querySelector("#search-input");
 const filterSelect = document.querySelector("#filter-select");
 
-let oldInputValue;
+let oldInputValue;
+
+function getTodos() {
+  return JSON.parse(localStorage.getItem('todos')) || [];
+}
+
+function saveTodosLS(todos) {
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function renderTodos() {
+  todoList.innerHTML = '';
+  getTodos().forEach((todo) => {
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    if (todo.done) todoDiv.classList.add("done");
+
+    const todoTitle = document.createElement("h3");
+    todoTitle.innerText = todo.text;
+    todoDiv.appendChild(todoTitle);
+
+    const doneBtn = document.createElement("button");
+    doneBtn.classList.add("finish-todo");
+    doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+    todoDiv.appendChild(doneBtn);
+
+    const editBtn = document.createElement("button");
+    editBtn.classList.add("edit-todo");
+    editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+    todoDiv.appendChild(editBtn);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("remove-todo");
+    deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    todoDiv.appendChild(deleteBtn);
+
+    todoList.appendChild(todoDiv);
+  });
+}
 
 const saveTodo = (text) => {
-  const todo = document.createElement("div");
-  todo.classList.add("todo");
-
-  const todoTitle = document.createElement("h3");
-  todoTitle.innerText = text;
-  todo.appendChild(todoTitle);
-
-  const doneBtn = document.createElement("button");
-  doneBtn.classList.add("finish-todo");
-  doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-  todo.appendChild(doneBtn);
-
-  const editBtn = document.createElement("button");
-  editBtn.classList.add("edit-todo");
-  editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
-  todo.appendChild(editBtn);
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("remove-todo");
-  deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-  todo.appendChild(deleteBtn);
-
-  todoList.appendChild(todo);
-
+  const todos = getTodos();
+  todos.push({ text, done: false });
+  saveTodosLS(todos);
+  renderTodos();
   todoInput.value = "";
   todoInput.focus();
 };
@@ -45,25 +63,20 @@ const toggleForms = () => {
 };
 
 const updateTodo = (text) => {
-  const todos = document.querySelectorAll(".todo");
-
-  todos.forEach((todo) => {
-    let todoTitle = todo.querySelector("h3");
-
-    if (todoTitle.innerText === oldInputValue) {
-      todoTitle.innerText = text;
-    }
-  });
+  let todos = getTodos();
+  todos = todos.map(todo =>
+    todo.text === oldInputValue ? { ...todo, text } : todo
+  );
+  saveTodosLS(todos);
+  renderTodos();
 };
 
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const inputValue = todoInput.value;
-
   if (inputValue) {
     saveTodo(inputValue);
-  }
+  }
 });
 
 document.addEventListener("click", (e) => {
@@ -75,12 +88,20 @@ document.addEventListener("click", (e) => {
     todoTitle = parentEL.querySelector("h3").innerText;
   }
 
+  let todos = getTodos();
+
   if (targetEL.classList.contains("finish-todo")) {
-    parentEL.classList.toggle("done");
+    todos = todos.map(todo =>
+      todo.text === todoTitle ? { ...todo, done: !todo.done } : todo
+    );
+    saveTodosLS(todos);
+    renderTodos();
   }
 
   if (targetEL.classList.contains("remove-todo")) {
-    parentEL.remove();
+    todos = todos.filter(todo => todo.text !== todoTitle);
+    saveTodosLS(todos);
+    renderTodos();
   }
 
   if (targetEL.classList.contains("edit-todo")) {
@@ -97,13 +118,10 @@ cancelEditBtn.addEventListener("click", (e) => {
 
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const editInputValue = editInput.value;
-
   if (editInputValue) {
     updateTodo(editInputValue);
   }
-
   toggleForms();
 });
 
@@ -151,3 +169,5 @@ filterSelect.addEventListener("change", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", renderTodos);
